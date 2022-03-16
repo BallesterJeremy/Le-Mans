@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --first-color: #f07912;
+  --second-color: #414141;
+  --third-color: #facd00;
+  --fourth-color: #e72418;
+  --fifth-color: #1e1e1e;
+  --body-color: #eeeeee;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 0;
+  line-height: 1.5rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: var(--body-color);
+}
+
+/* before burger  */
+
+#menuToggle {
+  opacity: 0;
+  
+}
+
+#menuToggle:checked + .menuButton > span {
+  transform: rotate(45deg);
+}
+
+#menuToggle:checked + .menuButton > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menuToggle:checked + .menuButton > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menuToggle:checked ~ .menu {
+  left: 0 !important;
+}
+
+.menuButton {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1;
+  
+}
+
+.menuButton >span, .menuButton > span::before, .menuButton > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--second-color);
+  transition-duration: .25s;
+  background-color: white;
+}
+
+.menuButton > span::before {
+  content: '';
+  top: -8px;
+}
+
+.menuButton > span::after {
+  content: '';
+  top: 8px;
+}
+
+.menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background: var(--second-color);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, -4);
+  transition-duration: .25s;
+}
+
+.menuItem {
+  display: block;
+  padding: 12px 24px;
+  color: rgb(245, 245, 245);
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+}
+
+.menuItem:hover{
+  background-color: #CFD8DC;
+}
+
+
+/* after burger */
+
+nav {
+  padding: 0.5rem;
+  background-color: var(--first-color);
+  color: var(--fifth-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  outline: solid;
+  color: var(--body-color);
+}
+nav h1 {
+  display: flex;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0%;
+}
+
+nav ul {
+  padding: 0;
+  list-style: none;
+  font-size: 1.25rem;
+}
+
+nav > ul > li > a {
+  text-decoration: none;
+  padding: 0.25rem;
+  color: var(--fifth-color);
+}
+
+footer {
+  padding: 0.35rem;
+  background: var(--first-color);
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  outline: solid;
+}
