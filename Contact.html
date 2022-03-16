@@ -25,14 +25,42 @@
       </div>
       <h1 id="lemans">Le Mans</h1>
     </nav>
-    
+
     <main>
-      <section>
-        <article></article>
-        <article></article>
-        <article></article>
-      </section>
+      <div class="container">
+        <h1 class="Cont">Contactez-nous !</h1>
+        <form action="">
+          <label for="fname">Nom & Prénom</label>
+          <input
+            type="text"
+            id="fname"
+            name="firstname"
+            placeholder="Votre nom & prénom"
+          />
+
+          <label for="sujet">Sujet</label>
+          <input
+            type="text"
+            id="sujet"
+            name="sujet"
+            placeholder="Objet de votre méssage"
+          />
+
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Votre email" />
+
+          <label for="subject">Message</label>
+          <textarea
+            name="subject"
+            id="subject"
+            placeholder="Votre message"
+          ></textarea>
+          <input id= "btn" type="submit" value="Envoyer" />
+        </form>
+      </div>
+      
     </main>
     <footer>Lorem ipsum dolor sit</footer>
+    <script src="main.js"></script>
   </body>
 </html>
