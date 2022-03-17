@@ -130,7 +130,7 @@ nav {
   color: var(--second-color);
   max-width: 100vw;
   border-style: solid;
-  border-bottom: 0;
+  border: solid, black
 }
 nav h1 {
   display: flex;
