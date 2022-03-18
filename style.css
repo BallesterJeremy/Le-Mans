@@ -3,7 +3,7 @@
 }
 
 :root {
-  --first-color: #e86a0f;
+  --first-color: #f07912;
   --second-color: #414141;
   --third-color: #facd00;
   --fourth-color: #e72418;
@@ -17,12 +17,112 @@ html {
 
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   line-height: 1.5rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   background: var(--body-color);
+  
 }
 
-/* before burger */
+.mainsection > article > p {
+  padding-left: 0.5rem;
+}
+.lineup {
+  padding-left: 0.3rem;
+}
+
+/* before burger  */
+
+/* debut pseudo animation du menu */
+#menuToggle {
+  opacity: 0;
+}
+
+#menuToggle:checked + .menuButton > span {
+  transform: rotate(45deg);
+}
+
+#menuToggle:checked + .menuButton > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+
+#menuToggle:checked + .menuButton > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+#menuToggle:checked ~ .menu {
+  left: 0 !important;
+}
+/* fin pseudo animation du menu */
+
+.menuButton {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 20px;
+  left: 20px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.menuButton > span,
+.menuButton > span::before,
+.menuButton > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: var(--second-color);
+  transition-duration: 0.25s;
+  background-color: white;
+}
+
+.menuButton > span::before {
+  content: "";
+  top: -8px;
+}
+
+.menuButton > span::after {
+  content: "";
+  top: 8px;
+}
+
+.menu {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background: var(--second-color);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, -4);
+  transition-duration: 0.25s;
+}
+
+.menuItem {
+  display: block;
+  padding: 12px 24px;
+  color: rgb(245, 245, 245);
+  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: 0.25s;
+}
+
+.menuItem:hover {
+  background-color: #cfd8dc;
+}
 
 /* after burger */
 
@@ -33,12 +133,18 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  outline: solid;
-  color: #1e1e1e;
+  outline: 1px solid;
+  color: var(--second-color);
+  max-width: 100vw;
+  border-style: solid;
+  border: solid, black
 }
 nav h1 {
+  display: flex;
+  align-items: center;
   font-size: 2rem;
   font-weight: 500;
+  margin: 0%;
 }
 
 nav ul {
@@ -50,15 +156,123 @@ nav ul {
 nav > ul > li > a {
   text-decoration: none;
   padding: 0.25rem;
-  color:var(--fifth-color)
+  color: var(--fifth-color);
 }
 
 footer {
   padding: 0.35rem;
   background: var(--first-color);
-  position:fixed;
+
+  min-height: 0;
   bottom: 0;
   width: 100%;
   outline: solid;
+  flex: 0 0 2rem;
+  margin-top: auto;
+}
+
+header .cityCenter {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+  max-height: 100vh;
+  border-style: solid;
+}
+
+section {
+  line-height: 1.5rem;
+  max-width: 65ch;
+  
+}
+
+h3 {
+  padding-left: 0.5rem;
+}
+
+.hidden {
+  padding-left: 0.5rem;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+p.hidden {
+  margin: 6px;
+}
+
+a.links {
+  text-decoration: none;
+}
+
+p.readmore {
+  margin-top: 6px;
+  text-align: right;
+}
+
+.imgModify{
+  display: block;
+  justify-content: center;
+  max-width: 100vw;
+  max-height: 100vh;
+  /* outrepasse le margin parent */
+  margin-left: 0;
+  
+  border-style: solid;
+  border: 1vh, 1vw, solid, black
+  
 
 }
+
+
+
+/* debut formulaire de contact */
+
+input[type=text],
+textarea,
+input[type=email] {
+width: 100%;
+padding: 12px;
+border: 1px solid var(--fifth-color);
+border-radius: 2px;
+margin-top: 6px;
+margin-bottom: 16px;
+margin-right: 0px;
+margin-left: 0;
+resize: vertical;
+}
+
+label {
+  margin-right: 0px;
+  margin-left: 0px;
+  width: 100%;
+}
+
+input[type=submit] {
+background-color: lightgray;
+color: white;
+padding: 12px 20px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+input[type=submit]:hover {
+  background-color: #cfd8dc;
+}
+
+.container {
+  border-radius: 6px;
+  background-color: #eeeeee;
+  padding: 20px;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+h1.Cont{
+  max-width: 100vw;
+  font-size: 1.5rem;
+}
+
+/* fin formulaire de contact */
