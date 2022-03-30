@@ -1,4 +1,3 @@
-
 /* setting reusable stuff */
 :root {
   --first-color: #f07912;
@@ -8,8 +7,6 @@
   --fifth-color: #1e1e1e;
   --body-color: #eeeeee;
 }
-
-
 
 html {
   box-sizing: border-box;
@@ -32,6 +29,7 @@ body {
 #para {
   padding: 8px;
   text-align: center;
+  font-size: 24px;
 }
 
 #tpara {
@@ -205,7 +203,9 @@ main > section > .tsprt {
 }
 
 h3 {
+  font-size: 24px;
   padding-left: 0.5rem;
+  text-align: center;
 }
 
 #Ttitle {
@@ -215,24 +215,21 @@ h3 {
   padding-left: 0;
 }
 
-.resize{
+.resize {
   padding: 6px;
-
 }
 
 .hidden {
-  padding-left: 0.5rem;
-  display: -webkit-box;
+  padding-left: 8px;
+  padding-right: 8px;
   -webkit-box-orient: vertical;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.5rem;
 }
 
 .pad > p {
   padding-left: 0.5rem;
-}
-
-p.hidden {
-  margin: 6px;
-  margin-bottom: 12px;
 }
 
 a.links {
@@ -242,6 +239,8 @@ a.links {
 .mainImg {
   max-width: 100%;
   max-height: 100vh;
+  margin-left: 0;
+  margin-right: 0;
   overflow: hidden;
   align-items: center;
   border: 1px solid;
@@ -259,8 +258,6 @@ a.links {
 }
 
 /* debut formulaire de contact */
-
-
 
 input[type="text"],
 textarea,
@@ -354,7 +351,7 @@ h1.Cont {
   color: #1e1e1e;
 }
 
-.titlemap{
+.titlemap {
   text-align: center;
 }
 
@@ -379,7 +376,7 @@ h1.Cont {
   color: rgb(247, 242, 242);
 }
 
-#monuid{
+#monuid {
   padding: 8px;
   text-align: center;
 }
@@ -398,13 +395,7 @@ h1.Cont {
 /* Screen Media */
 
 @media screen and (min-width: 1200px) {
-  
   /* main page */
-
-  .bodydesk {
-    max-width: 100%;
-    max-height: 100%;
-  }
 
   .menuButton > span,
   .menuButton > span::before,
@@ -418,11 +409,11 @@ h1.Cont {
   }
 
   .menu {
-    display: flex;
     position: absolute;
-    margin-top: 0.45rem;
+    display: flex;
+    margin-top: 8px;
     left: -100%;
-    width: 80%;
+    width: 100%;
     height: 0px;
     margin-left: 5rem;
     padding: 0;
@@ -434,8 +425,7 @@ h1.Cont {
 
   .menuItem {
     display: inline;
-    position: static;
-    padding: 8px 100px;
+    padding: 32px 32px;
     color: rgb(255, 255, 255);
     font-family: "Roboto", sans-serif;
     font-size: 30px;
@@ -476,10 +466,8 @@ h1.Cont {
   .mainsection {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    max-width: 100%;
-    max-height: 100%;
-    align-self: center;
+    justify-items: stretch;
+    align-items: stretch;
     grid-row-gap: 2rem;
   }
 
@@ -517,44 +505,36 @@ h1.Cont {
     margin: 8px 0 8px;
   }
 
+  .hidden {
+    font-size: 24px;
+    text-align: left;
+  }
+
+  .hiddenRight {
+    font-size: 24px;
+    text-align: right;
+  }
+
   /* adjusting grid around */
 
+  .box1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
   .box2 {
-    font-size: 23px;
-    display: grid;
-    grid-template-rows: 0fr 1fr;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 
+    grid-area: 2/1;
+  }
   .box3 {
-    align-self: center;
-    width: 65ch;
-    line-height: 2rem;
-  }
-
-  .box4 {
-    grid-area: 2 / -3;
-    font-size: 25px;
-    display: grid;
-    grid-template-rows: 0fr 1fr;
-  }
-
-  .box5 {
-    align-self: center;
-    width: 65ch;
-    line-height: 2rem;
-  }
-
-  .box6 {
-    grid-area: 4 / -3;
-    font-size: 25px;
-    display: grid;
-    grid-template-rows: 0fr 1fr;
-  }
-
-  .box7 {
-    align-self: center;
-    width: 65ch;
-    line-height: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    grid-area: 4/1;
   }
   /* reprise formulaire */
 
@@ -665,47 +645,46 @@ h1.Cont {
     text-align: center;
   }
 
-.eventSection {
-  display: grid;
-  max-width: 100%;
-  max-height: 80%;
-  justify-items: center;
-}
+  .eventSection {
+    display: grid;
+    max-width: 100%;
+    max-height: 80%;
+    justify-items: center;
+  }
 
-.resize{
-  font-size: 1.5rem;
-  max-width: 75ch;
-  line-height: 1.5rem;
-  margin-left: 18px;
-}
+  .resize {
+    font-size: 1.5rem;
+    max-width: 75ch;
+    line-height: 1.5rem;
+    margin-left: 18px;
+  }
 
-.mainEvent{
-  font-size: 2rem;
-}
+  .mainEvent {
+    font-size: 2rem;
+  }
 
-/* Fin Events */
+  /* Fin Events */
 
+  /* début Monuments */
 
-/* début Monuments */
+  #monuid {
+    font-size: 1.5rem;
+    margin-left: 18px;
+    margin-right: 18px;
+    text-align: center;
+  }
 
-#monuid{
-  font-size: 1.5rem;
-  margin-left: 18px;
-  margin-right: 18px;
-  text-align:center;
-}
+  .monusec {
+    display: grid;
+    max-width: 100%;
+    justify-items: center;
+  }
+  .Pmonu {
+    max-width: 75ch;
+    font-size: 1.5rem;
+  }
 
-.monusec{
-  display: grid;
-  max-width: 100%;
-  justify-items: center;
-}
-.Pmonu{
-  max-width: 75ch;
-  font-size: 1.5rem;
-}
-
-.monuBg{
-  font-size: 2rem;
-}
+  .monuBg {
+    font-size: 2rem;
+  }
 }
