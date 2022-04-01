@@ -169,6 +169,7 @@ nav > ul > li > a {
 }
 
 footer {
+  position: relative;
   margin-top: 12px;
   background: var(--first-color);
   min-height: 0;
@@ -650,6 +651,8 @@ h1.Cont {
     margin-top: 16px;
     margin-bottom: 16px;
   }
+
+  ma
 
   /* fin transports */
 
